@@ -5,16 +5,22 @@ const Bodies = Matter.Bodies;
 
 
 
-var drop;
+var drop=[];
 function setup() {
   createCanvas(400,400);
   engine = Engine.create();
   world = engine.world;
-  drop1=new Drop(200,0,50,50);
+ 
 }
 
 function draw() {
-  background(0);  
+  background(255);  
   Engine.update(engine);
-  drop1.display();
+  if(frameCount%5===0){
+    drop.push(new Drop(random(20,380),0,2,8));
+  }
+  for (var i =0;i <drop.length;i=i+1){
+    drop[i].display();
+  }
+  
 }
