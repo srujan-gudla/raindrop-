@@ -11,6 +11,8 @@ class Drop {
     display(){
         var position =this.body.position;
         rectMode(CENTER);
+        fill(0,255,221);
         rect(this.body.position.x,this.body.position.y,this.width,this.height);
+
     }
 }
